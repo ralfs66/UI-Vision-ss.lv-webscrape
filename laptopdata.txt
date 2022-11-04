@@ -1,0 +1,196 @@
+{
+  "Name": "Portativie DB",
+  "CreationDate": "2022-11-4",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "0",
+      "Value": "link",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "Fast",
+      "Value": "!REPLAYSPEED",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorignore",
+      "Description": ""
+    },
+    {
+      "Command": "label",
+      "Target": "starts",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Atveru sludinajumus",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://www.ss.lv/lv/electronics/computers/noutbooks/",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "clickAndWait",
+      "Target": "xpath=//div/a",
+      "Value": "",
+      "Targets": [
+        "linkText=k",
+        "id=dm_51488266",
+        "xpath=//*[@id=\"dm_51488266\"]",
+        "xpath=//a[@id='dm_51488266']",
+        "xpath=//div/a",
+        "css=#dm_51488266"
+      ],
+      "Description": "uzspiez uz pirmaakaa sludinajuma"
+    },
+    {
+      "Command": "pause",
+      "Target": "3000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://www.ss.lv/lv/electronics/computers/noutbooks/",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "clickAndWait",
+      "Target": "xpath=//div/a",
+      "Value": "",
+      "Targets": [
+        "linkText=k",
+        "id=dm_51488266",
+        "xpath=//*[@id=\"dm_51488266\"]",
+        "xpath=//a[@id='dm_51488266']",
+        "xpath=//div/a",
+        "css=#dm_51488266"
+      ],
+      "Description": "uzspiez uz pirmaakaa sludinajuma"
+    },
+    {
+      "Command": "gotoIf_v2",
+      "Target": "${link} == ${!URL}",
+      "Value": "starts",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Jauns sludinajums: ${!URL}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!URL}",
+      "Value": "link",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"tdo_24\"]/b",
+      "Value": "model",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_8",
+      "Value": "price",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_116",
+      "Value": "cpu",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"tdo_123\"]/b",
+      "Value": "vendor",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_115",
+      "Value": "ghz",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_13",
+      "Value": "hdd",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_12",
+      "Value": "ram",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_352",
+      "Value": "status",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "var d = new Date(); m = d.getDate()+\"-\"+(d.getMonth()+1)+\"-\"+ d.getFullYear()+\"_\"+ d.getHours()+\"ː\" + d.getMinutes() + \"ː\" + d.getSeconds(); return m",
+      "Value": "timestamp",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${timestamp},${vendor},${model},${cpu},${ram},${hdd},${status},${price},${link}",
+      "Value": "!csvLine",
+      "Description": ""
+    },
+    {
+      "Command": "csvSave",
+      "Target": "laptopdb.csv",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "localStorageExport // laptopdb.csv",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "10000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "gotoLabel",
+      "Target": "starts",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

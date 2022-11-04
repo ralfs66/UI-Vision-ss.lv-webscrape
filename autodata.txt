@@ -1,0 +1,202 @@
+{
+  "Name": "Auto Database",
+  "CreationDate": "2022-11-4",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "0",
+      "Value": "link",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "Fast",
+      "Value": "!REPLAYSPEED",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorignore",
+      "Description": ""
+    },
+    {
+      "Command": "label",
+      "Target": "starts",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Atveru sludinajumus",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://www.ss.lv/lv/transport/cars/today/",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "clickAndWait",
+      "Target": "xpath=//div/a",
+      "Value": "",
+      "Targets": [
+        "linkText=k",
+        "id=dm_51488266",
+        "xpath=//*[@id=\"dm_51488266\"]",
+        "xpath=//a[@id='dm_51488266']",
+        "xpath=//div/a",
+        "css=#dm_51488266"
+      ],
+      "Description": "uzspiez uz pirmaakaa sludinajuma"
+    },
+    {
+      "Command": "pause",
+      "Target": "3000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://www.ss.lv/lv/transport/cars/today/",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "clickAndWait",
+      "Target": "xpath=//div/a",
+      "Value": "",
+      "Targets": [
+        "linkText=k",
+        "id=dm_51488266",
+        "xpath=//*[@id=\"dm_51488266\"]",
+        "xpath=//a[@id='dm_51488266']",
+        "xpath=//div/a",
+        "css=#dm_51488266"
+      ],
+      "Description": "uzspiez uz pirmaakaa sludinajuma"
+    },
+    {
+      "Command": "gotoIf_v2",
+      "Target": "${link} == ${!URL}",
+      "Value": "starts",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Jauns sludinajums: ${!URL}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!URL}",
+      "Value": "link",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"tdo_31\"]/b",
+      "Value": "marka",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_18",
+      "Value": "gads",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_15",
+      "Value": "motors",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_35",
+      "Value": "karba",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_16",
+      "Value": "odo",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_17",
+      "Value": "krasa",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_32",
+      "Value": "virsbuve",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_223",
+      "Value": "ta",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=tdo_8",
+      "Value": "cena",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "var d = new Date(); m = d.getDate()+\"-\"+(d.getMonth()+1)+\"-\"+ d.getFullYear()+\"_\"+ d.getHours()+\"ː\" + d.getMinutes() + \"ː\" + d.getSeconds(); return m",
+      "Value": "timestamp",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${timestamp},${marka},${gads},${motors},${karba},${odo},${krasa},${virsbuve},${ta},${cena},${link}",
+      "Value": "!csvLine",
+      "Description": ""
+    },
+    {
+      "Command": "csvSave",
+      "Target": "autodb.csv",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "localStorageExport // laptopdb.csv",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "open // https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "3000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "gotoLabel",
+      "Target": "starts",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}
